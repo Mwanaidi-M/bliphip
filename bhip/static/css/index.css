@@ -1,0 +1,75 @@
+.navbar
+{
+    background-color: #fff9ee;
+}
+.brand-title
+{
+    font-family: 'Bodoni Moda', serif;
+    color: #3f3e3b !important;
+}
+.nav-link
+{
+    font-family: 'Merriweather', serif;
+    color: #3f3e3b;
+}
+.nav-link:hover
+{
+    text-decoration: underline;
+    color: #9a1a01 !important;
+}
+.budget-fmt
+{
+    font-family: 'Montserrat', sans-serif;
+    color: #e84855 !important;
+    font-size: 1.2em;
+}
+main h1,
+main h2,
+main h3,
+main h4,
+main h5,
+main h6
+{
+    font-family: 'Montserrat', sans-serif;
+    color: #3f3e3b;
+}
+main h1
+{
+    font-size: 3em;
+}
+main h3
+{
+    font-size: 2em;
+}
+.card-subtitle
+{
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #9a1a01 !important;
+}
+main p,
+.form-label
+{
+    font-family: 'Hind', sans-serif;
+    color: #3f3e3b;
+}
+.card
+{
+    width: 19rem;
+    outline: none;
+    border-width: 0px;
+}
+.card-body
+{
+    background-color: #f8f8f8;
+}
+.pagination
+{
+
+}
+.active > .page-link
+{
+    background-color: #9a1a01;
+    color: #ffffff;
+    border-color: transparent;
+}

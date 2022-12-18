@@ -1,0 +1,42 @@
+<!-- Product Info Modal -->
+<div class="modal fade" id="infoModal{{ prd.product_id }}" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="infoModalLabel">{{ prd.product_name }}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{ prd.product_desc }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Product Purchase Modal -->
+<div class="modal fade" id="buyModal{{ prd.product_id }}" tabindex="-1" aria-labelledby="buyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Confirm Purchase of {{ prd.product_name }}?
+      </div>
+      <div class="modal-footer">
+        <form action="" method="post">
+          {{ buy_pr.csrf_token }}
+          {{ buy_pr.hidden_tag() }}
+
+          <input type="hidden" id="purchased_item" name="purchased_item" value="{{ prd.product_name }}">
+          {{ buy_pr.submit(class="btn btn-primary") }}
+        </form>
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   SHOP
+{% endblock %}
+
+{% block content %}
+   <h1 class="text-center my-3"> Products </h1>
+
+   <div class="container-md d-flex flex-wrap justify-content-evenly align-items-stretch">
+      {% for prd in products.items | sort(attribute='product_name') %}
+         {% include '_product-card.html' %}
+      {% endfor %}
+   </div>
+
+   <!-- Pagination Links -->
+   <nav class="mt-5">
+      <ul class="pagination pagination-lg">
+         {% if products.has_prev %}
+         <li class="page-item">
+            <a href="{{ url_for('market', page=products.prev_num) }}" class="page-link text-muted">
+               <span aria-hidden="true" class="text-muted">&lt;&lt;&lt;</span>
+            </a>
+         </li>
+         {% endif %}
+         {% for number in products.iter_pages() %}
+            {% if products.page != number %}
+               <li class="page-item">
+                  <a href="{{ url_for('market', page=number) }}" class="page-link text-muted">{{ number }}</a>
+               </li>
+            {% else %}
+               <li class="page-item current-page-number active">
+                  <a href="" class="page-link">{{ number }}</a>
+               </li>
+            {% endif %}
+         {% endfor %}
+         {% if products.has_next %}
+         <li class="page-item">
+            <a href="{{ url_for('market', page=products.next_num) }}" class="page-link">
+               <span aria-hidden="true" class=" text-muted">&gt;&gt;&gt;</span>
+            </a>
+         </li>
+         {% endif %}
+      </ul>
+   </nav>
+
+{% endblock %}

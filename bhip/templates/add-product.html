@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   NEW PRODUCT
+{% endblock %}
+
+{% block content %}
+   <h2> ADD PRODUCT </h2>
+
+   <form action="" method="post" class="w-25">
+      {{ prd_form.csrf_token }}
+      {{ prd_form.hidden_tag() }}
+
+      <h3>New Product Addition</h3>
+      <div class="mb-2">
+         {% if prd_form.name_product.errors %}
+         <ul>
+         {% for error in prd_form.name_product.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ prd_form.name_product.label(class="form-label") }}
+         {{ prd_form.name_product(class="form-control") }}
+      </div>
+      <div class="mb-2">
+         {% if prd_form.desc_product.errors %}
+         <ul>
+         {% for error in prd_form.desc_product.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ prd_form.desc_product.label(class="form-label") }}
+         {{ prd_form.desc_product(class="form-control") }}
+      </div>
+      <div class="mb-2">
+         {% if prd_form.price_product.errors %}
+         <ul>
+         {% for error in prd_form.price_product.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ prd_form.price_product.label(class="form-label") }}
+         {{ prd_form.price_product(class="form-control") }}
+      </div>
+      <div class="mb-2">
+         {{ prd_form.submit(class="btn btn-primary") }}
+      </div>
+   </form>
+
+{% endblock %}

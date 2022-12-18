@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   LOGIN
+{% endblock %}
+
+{% block content %}
+   <form action="" method="post" class="w-50 mt-5">
+      {{ s_in.csrf_token }}
+      {{ s_in.hidden_tag() }}
+
+      <h3 class="text-center my-3">Log In</h3>
+      <div class="mb-4">
+         {% if s_in.email_addr.errors %}
+         <ul>
+         {% for error in s_in.email_addr.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_in.email_addr.label(class="form-label fs-5") }}
+         {{ s_in.email_addr(class="form-control") }}
+      </div>
+      <div class="mb-4">
+         {% if s_in.password.errors %}
+         <ul>
+         {% for error in s_in.password.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_in.password.label(class="form-label fs-5") }}
+         {{ s_in.password(class="form-control") }}
+      </div>
+      <div class="mb-2">
+         {{ s_in.submit(class="btn btn-primary") }}
+      </div>
+      <div class="my-4">
+         <p>Don't have an account? <a href="{{ url_for('account_register') }}" class="text-decoration-none">Sign Up</a></p>
+      </div>
+   </form>
+{% endblock %}

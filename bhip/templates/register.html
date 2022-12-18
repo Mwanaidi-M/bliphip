@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block title %}
+   REGISTER
+{% endblock %}
+
+{% block content %}
+   <form action="" method="post" class="w-75 row g-3">
+      {{ s_up.csrf_token }}
+      {{ s_up.hidden_tag() }}
+
+      <h3>Create Account</h3>
+
+      <div class="mb-2 col-md-6">
+         {% if s_up.first_name.errors %}
+         <ul>
+         {% for error in s_up.first_name.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_up.first_name.label(class="form-label") }}
+         {{ s_up.first_name(class="form-control") }}
+      </div>
+      <div class="mb-2 col-md-6">
+         {% if s_up.last_name.errors %}
+         <ul>
+         {% for error in s_up.last_name.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_up.last_name.label(class="form-label") }}
+         {{ s_up.last_name(class="form-control") }}
+      </div>
+      <div class="mb-2 col-md-6">
+         {% if s_up.email_addr.errors %}
+         <ul>
+         {% for error in s_up.email_addr.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_up.email_addr.label(class="form-label") }}
+         {{ s_up.email_addr(class="form-control") }}
+      </div>
+      <div class="mb-2 col-md-6">
+         {% if s_up.acc_budget.errors %}
+         <ul>
+         {% for error in s_up.acc_budget.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_up.acc_budget.label(class="form-label") }}
+         {{ s_up.acc_budget(class="form-control") }}
+      </div>
+      <div class="mb-2 col-md-6">
+         {% if s_up.password.errors %}
+         <ul>
+         {% for error in s_up.password.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_up.password.label(class="form-label") }}
+         {{ s_up.password(class="form-control") }}
+      </div>
+      <div class="mb-2 col-md-6">
+         {% if s_up.confirm_pwd.errors %}
+         <ul>
+         {% for error in s_up.confirm_pwd.errors %}
+            <li>{{ error }}</li>
+         {% endfor %}
+         </ul>
+         {% endif %}
+
+         {{ s_up.confirm_pwd.label(class="form-label") }}
+         {{ s_up.confirm_pwd(class="form-control") }}
+      </div>
+
+      <div class="mb-2">
+         {{ s_up.submit(class="btn btn-primary") }}
+      </div>
+      <div class="my-4">
+         <p>Already have an account? <a href="{{ url_for('account_login') }}" class="text-decoration-none">Sign In</a></p>
+      </div>
+   </form>
+{% endblock %}
