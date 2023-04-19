@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block title %}
+    503
+{% endblock %}
+
+{% block content %}
+    <article class="container">
+        <section class="img-sect">
+            <img src="{{ url_for('static', filename='img/503img.svg') }}" alt="503-error-img">
+        </section>
+        <section class="desc-sect">
+            <h2>503</h2>
+            <h4>Service Unavailable</h4>
+            <p>
+                The server is unable to handle your request due to a temporary overload or maintenance
+            </p>
+            <a href="{{ url_for('home') }}">RETURN TO HOME PAGE</a>
+        </section>
+    </article>
+
+{% endblock %}

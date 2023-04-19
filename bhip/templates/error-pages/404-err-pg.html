@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block title %}
+    404
+{% endblock %}
+
+{% block content %}
+    <article class="container">
+        <section class="img-sect">
+            <img src="{{ url_for('static', filename='img/404img.svg') }}" alt="404-error-img">
+        </section>
+        <section class="desc-sect">
+            <h2>OOPS! NOTHING WAS FOUND</h2>
+            <p>
+                The page you're looking for does not exist.
+            </p>
+            <a href="{{ url_for('home') }}">BACK TO HOME PAGE</a>
+        </section>
+    </article>
+
+{% endblock %}

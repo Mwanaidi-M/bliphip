@@ -20,4 +20,4 @@ my_login = LoginManager(my_app)
 my_login.login_view = 'account_login'
 
 # round import of routes & models.py file
-from bhip import routes, models
+from bhip import routes, models, errors

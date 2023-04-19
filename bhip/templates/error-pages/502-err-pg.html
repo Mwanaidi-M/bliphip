@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block title %}
+    502
+{% endblock %}
+
+{% block content %}
+    <article class="container">
+        <section class="img-sect">
+            <img src="{{ url_for('static', filename='img/502img.svg') }}" alt="502-error-img">
+        </section>
+        <section class="desc-sect">
+            <h2>502</h2>
+            <h4>BAD GATEWAY</h4>
+            <p>
+                The server could not complete your request due to a temporary error.
+            </p>
+        </section>
+    </article>
+
+{% endblock %}

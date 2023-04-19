@@ -1,0 +1,22 @@
+{% extends './base.html' %}
+
+{% block title %}
+    403
+{% endblock %}
+
+{% block content %}
+    <article class="container">
+        <section class="img-sect">
+            <img src="{{ url_for('static', filename='img/403img.svg') }}" alt="403-error-img">
+        </section>
+        <section class="desc-sect">
+            <h2>403</h2>
+            <h4>Access Denied/Forbidden</h4>
+            <p>
+                Stop! The page you're trying to reach is forbidden for some reason.
+            </p>
+            <a href="{{ url_for('home') }}">BACK TO HOME PAGE</a>
+        </section>
+    </article>
+
+{% endblock %}

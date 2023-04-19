@@ -1,0 +1,48 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img
+{
+    width: 100%;
+    max-width: 600px;
+}
+/*.container > *
+{
+    border: 1px solid red;
+}*/
+.container
+{
+    height: 85vh;
+    /*border: 2px solid greenyellow;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.desc-sect
+{
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+.desc-sect h2
+{
+    font-size: 2em;
+}
+.desc-sect a
+{
+    text-decoration: none;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px 20px;
+}

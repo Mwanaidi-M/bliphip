@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block title %}
+    500
+{% endblock %}
+
+{% block content %}
+    <article class="container">
+        <section class="img-sect">
+            <img src="{{ url_for('static', filename='img/500img.svg') }}" alt="500-error-img">
+        </section>
+        <section class="desc-sect">
+            <h3>Well this is unexpected...</h3>
+            <p>
+                An error has occured, and we are currently trying to fix the problem.
+                Apologies for the inconvenience.
+            </p>
+        </section>
+    </article>
+
+{% endblock %}

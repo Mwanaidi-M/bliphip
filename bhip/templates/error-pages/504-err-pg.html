@@ -1,0 +1,21 @@
+{% extends './base.html' %}
+
+{% block title %}
+    504
+{% endblock %}
+
+{% block content %}
+    <article class="container">
+        <section class="img-sect">
+            <img src="{{ url_for('static', filename='img/504img.svg') }}" alt="504-error-img">
+        </section>
+        <section class="desc-sect">
+            <h2>504</h2>
+            <h4>Gateway Timeout</h4>
+            <p>
+                Sorry, the server took too long to respond.
+            </p>
+        </section>
+    </article>
+
+{% endblock %}
